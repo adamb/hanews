@@ -1,0 +1,112 @@
+sources:
+  - id: home_assistant_blog
+    name: Home Assistant Blog
+    type: rss
+    url: https://www.home-assistant.io/atom.xml
+    authority: 1.0
+    categories: [home_assistant]
+    enabled: true
+
+  - id: home_assistant_core
+    name: Home Assistant Core Releases
+    type: github_releases
+    repo: home-assistant/core
+    authority: 1.0
+    categories: [home_assistant, integrations]
+    enabled: true
+
+  - id: home_assistant_frontend
+    name: Home Assistant Frontend Releases
+    type: github_releases
+    repo: home-assistant/frontend
+    authority: 0.85
+    categories: [home_assistant]
+    enabled: true
+
+  - id: home_assistant_os
+    name: Home Assistant OS Releases
+    type: github_releases
+    repo: home-assistant/operating-system
+    authority: 0.9
+    categories: [home_assistant]
+    enabled: true
+
+  - id: esphome_releases
+    name: ESPHome Releases
+    type: github_releases
+    repo: esphome/esphome
+    authority: 1.0
+    categories: [esphome, developer_tools]
+    enabled: true
+
+  - id: zigbee2mqtt_releases
+    name: Zigbee2MQTT Releases
+    type: github_releases
+    repo: Koenkk/zigbee2mqtt
+    authority: 0.95
+    categories: [zigbee, integrations]
+    enabled: true
+
+  - id: csa_news
+    name: CSA / Matter News
+    type: rss
+    url: https://csa-iot.org/feed/
+    authority: 0.9
+    categories: [matter, standards]
+    enabled: true
+
+  - id: cnx_software
+    name: CNX Software
+    type: rss
+    url: https://www.cnx-software.com/feed/
+    authority: 0.6
+    categories: [devices, developer_tools]
+    enabled: true
+
+  - id: hackaday
+    name: Hackaday
+    type: rss
+    url: https://hackaday.com/blog/feed/
+    authority: 0.55
+    categories: [developer_tools, devices]
+    enabled: true
+
+  - id: ars_gadgets
+    name: Ars Technica Gadgets
+    type: rss
+    url: https://feeds.arstechnica.com/arstechnica/gadgets
+    authority: 0.65
+    categories: [devices, industry]
+    enabled: true
+
+  - id: the_verge
+    name: The Verge
+    type: rss
+    url: https://www.theverge.com/rss/index.xml
+    authority: 0.55
+    categories: [devices, industry]
+    enabled: true
+
+  - id: nine_to_five_google
+    name: 9to5Google
+    type: rss
+    url: https://9to5google.com/feed/
+    authority: 0.5
+    categories: [devices]
+    enabled: true
+
+  - id: nine_to_five_mac
+    name: 9to5Mac
+    type: rss
+    url: https://9to5mac.com/feed/
+    authority: 0.5
+    categories: [devices]
+    enabled: true
+
+  - id: hackster
+    name: Hackster
+    type: rss
+    url: https://www.hackster.io/news.rss
+    authority: 0.5
+    categories: [developer_tools, devices]
+    enabled: true

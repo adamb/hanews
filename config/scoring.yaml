@@ -1,0 +1,82 @@
+weights:
+  relevance: 0.25
+  novelty: 0.20
+  importance: 0.20
+  authority: 0.15
+  personal_interest: 0.20
+
+keep_threshold: 50
+
+digest:
+  max_stories: 8
+  min_overall_score: 55
+  recency_days: 7
+
+classify:
+  recency_days: 14
+  max_per_run: 40
+
+keyword_gate:
+  enabled: true
+  min_authority_to_skip: 0.85
+  keywords:
+    - home assistant
+    - homeassistant
+    - hass
+    - esphome
+    - esp home
+    - zigbee2mqtt
+    - z2m
+    - zigbee
+    - z-wave
+    - zwave
+    - matter
+    - thread
+    - matter-over-thread
+    - matter over thread
+    - openthread
+    - smart home
+    - smarthome
+    - home automation
+    - homekit
+    - presence
+    - mmwave
+    - mm-wave
+    - occupancy sensor
+    - energy monitor
+    - local-first
+    - local first
+    - aqara
+    - eve
+    - shelly
+    - inovelli
+    - hue
+    - signify
+    - sonoff
+    - itead
+    - switchbot
+    - nanoleaf
+    - govee
+    - thirdreality
+    - third reality
+    - zooz
+    - lutron
+    - nuki
+    - ecobee
+    - reolink
+    - unifi
+    - ubiquiti
+    - apollo automation
+    - everything presence
+
+personal_interest_boost:
+  topics:
+    - thread
+    - matter
+    - home_assistant
+    - esphome
+    - presence
+    - energy
+    - sensors
+    - automation_ideas
+    - developer_tools

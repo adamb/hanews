@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Home Assistant Blog</title>
+  <link href="https://www.home-assistant.io/blog/"/>
+  <entry>
+    <id>https://www.home-assistant.io/blog/2026/08/05/release-20268/</id>
+    <title>2026.8: Approachable by design</title>
+    <link href="https://www.home-assistant.io/blog/2026/08/05/release-20268/?utm_source=rss"/>
+    <updated>2026-08-05T12:00:00Z</updated>
+    <author><name>Ashley Abbott</name></author>
+    <summary>Home Assistant 2026.8 ships Matter improvements and a new presence helper.</summary>
+  </entry>
+  <entry>
+    <id>https://www.home-assistant.io/blog/2026/07/01/release-20267/</id>
+    <title>2026.7: Automations that speak your language</title>
+    <link href="https://www.home-assistant.io/blog/2026/07/01/release-20267/"/>
+    <updated>2026-07-01T12:00:00Z</updated>
+    <summary>An older Home Assistant release for recency tests.</summary>
+  </entry>
+</feed>
