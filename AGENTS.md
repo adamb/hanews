@@ -65,7 +65,8 @@ Or: `scripts/setup.sh` then `scripts/hai.sh pipeline run`.
 - Every keep/reject is a row in `decisions`. "Why did this appear?" and "Why did that not appear?" are requirements.
 - Digests are written to `output/digests/YYYY-MM-DD.md` and may be committed. Never commit `.env`, the SQLite DB, or raw caches.
 - No autonomous publishing. Phase 1 is the daily brief only.
-- LLM provider is xAI (`XAI_API_KEY`, `https://api.x.ai/v1`). Default model `grok-4.5`.
+- Intended LLM is Grok. Prefer `LLM_PROVIDER=xai` with a console key that can call chat/responses.
+- On this host the existing Hermes `XAI_API_KEY` is denied for chat, so the working default is `LLM_PROVIDER=openrouter` and model `x-ai/grok-4.5`. Switch back to `api.x.ai` when a chat-capable xAI key is available. Never commit either key.
 
 ## Scope lock (MVP)
 

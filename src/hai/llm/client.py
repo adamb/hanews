@@ -11,10 +11,23 @@ class LLMError(Exception):
     pass
 
 
-def _client(settings: Settings) -> OpenAI:
+def _client(settings: Settings) -> tuple[OpenAI, str]:
+    if settings.llm_provider == "openrouter":
+        if not settings.openrouter_api_key:
+            raise LLMError("OPENROUTER_API_KEY is not set")
+        return (
+            OpenAI(
+                api_key=settings.openrouter_api_key,
+                base_url=settings.openrouter_base_url,
+            ),
+            settings.openrouter_model,
+        )
     if not settings.xai_api_key:
         raise LLMError("XAI_API_KEY is not set")
-    return OpenAI(api_key=settings.xai_api_key, base_url=settings.xai_base_url)
+    return (
+        OpenAI(api_key=settings.xai_api_key, base_url=settings.xai_base_url),
+        settings.xai_model,
+    )
 
 
 def classify_with_model(
@@ -29,7 +42,7 @@ def classify_with_model(
     settings: Settings | None = None,
 ) -> Classification:
     settings = settings or get_settings()
-    client = _client(settings)
+    client, model = _client(settings)
     prompt = user_prompt(
         title=title,
         url=url,
@@ -41,7 +54,7 @@ def classify_with_model(
     )
     try:
         completion = client.beta.chat.completions.parse(
-            model=settings.xai_model,
+            model=model,
             messages=[
                 {"role": "system", "content": SYSTEM_PROMPT},
                 {"role": "user", "content": prompt},

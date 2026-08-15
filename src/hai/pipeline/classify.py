@@ -157,7 +157,7 @@ def classify_story(
             item_id=int(primary["id"]),
             input_data={"title": primary["title"], "url": primary["url"]},
             output_data={"error": str(exc)},
-            model=settings.xai_model,
+            model=settings.active_model,
         )
         return {"status": "error", "reason": str(exc)}
 
@@ -206,6 +206,6 @@ def classify_story(
         item_id=int(primary["id"]),
         input_data={"title": primary["title"], "url": primary["url"]},
         output_data=result.model_dump(),
-        model=settings.xai_model,
+        model=settings.active_model,
     )
     return {"status": decision, "reason": reason, "overall_score": computed}

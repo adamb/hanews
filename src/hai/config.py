@@ -27,6 +27,10 @@ class Settings(BaseSettings):
     xai_api_key: str = ""
     xai_model: str = "grok-4.5"
     xai_base_url: str = "https://api.x.ai/v1"
+    llm_provider: str = "xai"
+    openrouter_api_key: str = ""
+    openrouter_model: str = "x-ai/grok-4.5"
+    openrouter_base_url: str = "https://openrouter.ai/api/v1"
     github_token: str = ""
     hai_data_dir: Path = DEFAULT_BACKUP_ROOT / "data"
     hai_cache_dir: Path = DEFAULT_BACKUP_ROOT / "cache"
@@ -56,6 +60,12 @@ class Settings(BaseSettings):
     @property
     def digest_dir(self) -> Path:
         return self.output_dir / "digests"
+
+    @property
+    def active_model(self) -> str:
+        if self.llm_provider == "openrouter":
+            return self.openrouter_model
+        return self.xai_model
 
 
 @lru_cache(maxsize=1)
